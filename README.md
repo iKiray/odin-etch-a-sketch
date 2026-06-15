@@ -1,1 +1,2 @@
-# odin-etch-a-sketch
+# Project: Etch a Sketch
+From Foundations course in The Odin Project
