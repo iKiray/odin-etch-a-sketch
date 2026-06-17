@@ -25,6 +25,15 @@ for (let i = 0; i < initTotal; i++) {
 const createBtn = document.getElementById("createGridBtn");
 
 createBtn.addEventListener("click", () => {
-    let size = prompt("Type the number [X] for the grid [X by X] (maximum 100x100)");
+    let newSize = prompt("Type the number [X] for the grid [X by X] (maximum 100x100)");
 
+    if (newSize === null || newSize > 100 || newSize < 1 || isNaN(newSize)) {
+        return alert("Error: entry error please try again");
+    } else {
+        newGrid(newSize);
+    }
 })
+
+function newGrid(size) {
+    
+}
