@@ -28,7 +28,8 @@ const createBtn = document.getElementById("createGridBtn");
 createBtn.addEventListener("click", () => {
     let newSize = prompt("Type the number [X] for the grid [X by X] (maximum 100x100)");
 
-    if (newSize === null || newSize > 100 || newSize < 1 || isNaN(newSize)) {
+    //opencode edge case mentions float numbers which is fixed with !Number.isInteger
+    if (newSize === null || newSize > 100 || newSize < 1 || isNaN(newSize) || !Number.isInteger(+newSize)) {
         return alert("Error: entry error please try again");
     } else {
         container.replaceChildren();
@@ -38,6 +39,8 @@ createBtn.addEventListener("click", () => {
 
 //Step 4 - function for the new grid after prompt
 //copied the base of the initial grid, only changing variable names for the function to work
+//note: opencode mentions the redundancy that i could lower lines by calling this function
+//for initial grid size and new grid size basically.
 function createGrid(size) {
     const total = size * size;
     
