@@ -30,10 +30,11 @@ createBtn.addEventListener("click", () => {
     if (newSize === null || newSize > 100 || newSize < 1 || isNaN(newSize)) {
         return alert("Error: entry error please try again");
     } else {
+        container.replaceChildren();
         newGrid(newSize);
     }
 })
 
 function newGrid(size) {
-    
+
 }
