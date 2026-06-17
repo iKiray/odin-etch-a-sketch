@@ -21,7 +21,8 @@ for (let i = 0; i < initTotal; i++) {
     container.appendChild(div);
 }
 
-//Step 4 - prompting from button
+//Step 4 - prompting from button with logic
+//takes only number 1-100, deletes the containers children and calls the function
 const createBtn = document.getElementById("createGridBtn");
 
 createBtn.addEventListener("click", () => {
@@ -31,10 +32,26 @@ createBtn.addEventListener("click", () => {
         return alert("Error: entry error please try again");
     } else {
         container.replaceChildren();
-        newGrid(newSize);
+        createGrid(newSize);
     }
 })
 
-function newGrid(size) {
+//Step 4 - function for the new grid after prompt
+//copied the base of the initial grid, only changing variable names for the function to work
+function createGrid(size) {
+    const total = size * size;
+    
+    for (let i = 0; i < total; i++) {
+        const div = document.createElement("div");
+        
+        div.style.border = '1px solid black';
+        div.style.flex = `0 0 calc(100% / ${size})`;
+        div.style.aspectRatio = '1';
+        div.style.boxSizing = 'border-box';
 
+        div.addEventListener("mouseenter", () => {
+            div.style.backgroundColor = "blue";
+        })
+        container.appendChild(div);
+    }
 }
