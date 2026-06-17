@@ -13,3 +13,12 @@ for (let i = 0; i < total; i++) {
     })
     container.appendChild(div);
 }
+
+//Step 4 - prompting from button
+const createBtn = document.getElementById("createGridBtn");
+
+createBtn.addEventListener("click", () => {
+    let size = prompt("Type the number [X] for the grid [X by X] (maximum 100x100)");
+
+    
+})
