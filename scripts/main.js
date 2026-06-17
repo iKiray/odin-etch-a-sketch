@@ -7,5 +7,9 @@ const total = size * size;
 
 for (let i = 0; i < total; i++) {
     const div = document.createElement("div");
+    //Step 3 - applying a class to the div which happens during mouse enter event
+    div.addEventListener("mouseenter", () => {
+        div.classList.add("drawn");
+    })
     container.appendChild(div);
 }
