@@ -3,15 +3,3 @@
     display: flex;
     flex-wrap: wrap;
 }
-#container > div {
-    border: 1px solid black;
-    flex: 0 0 calc(100%/16);
-    aspect-ratio: 1;
-    box-sizing: border-box;
-}
-/*Step 3 - setting up hovering effect (class)
-.drawn is the class which is connected to the js file
-*/
-#container > div.drawn {
-    background-color: blue;
-}
